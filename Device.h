@@ -5,7 +5,7 @@ using std::string;
 
 class Device {
     public:
-    	Device(const string & = "iOS", int = 2000, const string & = "usb", bool = 0, bool = 0, int = 0);
+    	Device(const string & = "iOS", int = 2000, const string & = "usb", int = 0);
     	Devide(const Device &);
     	int verificaMemoria();
     	void modificaConex(const string &);

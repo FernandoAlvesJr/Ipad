@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string.h>
 #include "Device.h"
 
 using std::string;
