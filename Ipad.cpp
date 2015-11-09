@@ -13,3 +13,14 @@ Ipad(const string & sis  , int memoria , const string & tipoConex , int vol, con
 	creditCard >= 0 ? this->cartaoCredito = creditCard : this->cartaoCredito = 0;
 	
 }
+
+Ipad::Ipad (const Ipad &ipadOut)
+:Device(static_cast<Device>(ipadOut))
+{
+	this->loginiCloud = ipadOut.loginiCloud;
+	this->senhaiCloud = ipadOut.senhaiCloud;
+	this->loginAppleStore = ipadOut.loginAppleStore;
+	this->senhaAppleStore = ipadOut.senhaAppleStore;
+	this->cartaoCredito = ipadOut.cartaoCredito;
+	
+}
