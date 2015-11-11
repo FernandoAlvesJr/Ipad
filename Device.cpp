@@ -1,26 +1,19 @@
 #include "Device.h"
 
 
-Device::Device(const string & sis  , int memoria , const string & tipoConex , int vol)
-:sistema(sis)
+Device::Device(const string & sis  , int memoria , bool estado)
 {
+	sis != "" ? this->sistema = sis : this->sistema = "Linux";
 	memoria >= 0? this->tamMemPrinc = memoria : this->tamMemPrinc = 2000;
-	tipoConex != "" ? this->conexaoComp = tipoConex : this->conexaoComp = "usb";
-	this->estado = 0;
-	this->estadoWifi = 0;
-	(volume >= 0 && volume <= maxVolume) ? vol = volume : vol = 0;
+	((estado >= 0) && (estado <= 1)) ? this->estado_ = estado : this->estado_ = 0;
 }
 
-Device::Device(const Device &d)
-:sistema(d.sistema)
+Device::~Device()
 {
-	this->tamMemPrinc = d.tamMemPrinc;
-	this->conexaoComp = d.conexaoComp;
-	this->estado = d.estado;
-	this->estadoWifi = d.estadoWifi;
-	this->volume = d.volume;
 }
 
+
+/*
 int Device::verificaMemoria()
 {
 	return this->tamMemPrinc;
@@ -89,3 +82,4 @@ void Device::aumentaVolume()
 		this->volume++;
 	}
 }
+*/
